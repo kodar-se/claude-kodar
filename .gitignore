@@ -1,0 +1,3 @@
+# Claude Code lays the mod's API types here each time it loads the mod; they describe the
+# machine's Claude Code, MCP servers included, so they never go in the repository.
+plugins/*/.claude-plugin/types/

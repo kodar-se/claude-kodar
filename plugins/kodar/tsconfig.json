@@ -1,0 +1,20 @@
+{
+  // The options Claude Code's own mod tsconfig carries, written out so tools that
+  // read this file (vite, wrangler) work before Claude Code has laid
+  // .claude-plugin/types, which it does each time it loads the mod.
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": ["es2023"],
+    "types": [],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
+  },
+  "include": [".claude-plugin/types", "hooks", "tests"]
+}

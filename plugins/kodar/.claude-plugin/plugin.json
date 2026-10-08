@@ -1,0 +1,46 @@
+{
+  "name": "kodar",
+  "version": "0.4.1",
+  "description": "Reports what this Claude Code session is working on to your kodar hub, so one dashboard shows every session across machines and accounts.",
+  "author": { "name": "kodar.se" },
+  "repository": "https://github.com/kodar-se/claude-kodar",
+  "userConfig": {
+    "hub_url": {
+      "type": "string",
+      "title": "Hub URL",
+      "description": "Where your kodar hub runs, such as https://kodar.example.com. Leave empty to keep this machine from reporting.",
+      "default": ""
+    },
+    "token": {
+      "type": "string",
+      "title": "Ingest token",
+      "description": "A token your kodar hub takes, such as one its bootstrap link made.",
+      "sensitive": true
+    },
+    "device": {
+      "type": "string",
+      "title": "Device name",
+      "description": "How this machine is labelled on the dashboard. Empty uses its hostname. The KODAR_DEVICE_NAME environment variable, where set, wins over this.",
+      "default": ""
+    },
+    "account": {
+      "type": "string",
+      "title": "Account label",
+      "description": "Which Claude account this is, such as personal or work. Empty uses the CLAUDE_CONFIG_DIR folder name, or default. A login listed in Accounts wins over this.",
+      "default": ""
+    },
+    "accounts": {
+      "type": "string",
+      "title": "Accounts",
+      "description": "Labels for your Claude logins, as email=label pairs split by commas, such as you@home.example=personal, you@work.example=work. A session then reports its login's label and follows a /login to another one. The email is only compared here; just the label is sent. Empty skips the lookup.",
+      "default": ""
+    },
+    "detail": {
+      "type": "string",
+      "title": "Detail",
+      "description": "How much text leaves this machine: summary sends the first 160 characters of prompts, answers and tool targets; full sends up to 2000; minimal sends only project, branch, state and tool names.",
+      "options": ["summary", "full", "minimal"],
+      "default": "summary"
+    }
+  }
+}

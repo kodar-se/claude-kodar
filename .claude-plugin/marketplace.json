@@ -1,0 +1,12 @@
+{
+  "name": "kodar",
+  "description": "The kodar mod: reports what each Claude Code session is working on to a kodar hub.",
+  "owner": { "name": "kodar.se" },
+  "plugins": [
+    {
+      "name": "kodar",
+      "source": "./plugins/kodar",
+      "description": "Reports what each Claude Code session is working on to your kodar hub."
+    }
+  ]
+}
